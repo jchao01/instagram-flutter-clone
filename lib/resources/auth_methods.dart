@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:instagram_clone_flutter/models/user.dart' as model;
 import 'package:instagram_clone_flutter/resources/storage_methods.dart';
+import 'package:provider/provider.dart';
 
 class AuthMethods {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -58,9 +59,6 @@ class AuthMethods {
             .collection("users")
             .doc(cred.user!.uid)
             .set(user.toJson());
-
-        await _auth.signInWithEmailAndPassword(
-            email: email, password: password);
 
         res = "success";
       } else {

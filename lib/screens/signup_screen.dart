@@ -55,13 +55,14 @@ class _SignupScreenState extends State<SignupScreen> {
       });
       // navigate to the home screen
       if (context.mounted) {
-        Navigator.of(context).pushReplacement(
+        Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(
             builder: (context) => const ResponsiveLayout(
               mobileScreenLayout: MobileScreenLayout(),
               webScreenLayout: WebScreenLayout(),
             ),
           ),
+          (route) => false,
         );
       }
     } else {

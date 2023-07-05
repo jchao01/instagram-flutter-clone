@@ -1,7 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone_flutter/utils/colors.dart';
 import 'package:instagram_clone_flutter/utils/global_variable.dart';
+
+import '../screens/add_post_screen.dart';
+import '../screens/feed_screen.dart';
+import '../screens/profile_screen.dart';
+import '../screens/search_screen.dart';
 
 class WebScreenLayout extends StatefulWidget {
   const WebScreenLayout({Key? key}) : super(key: key);
@@ -39,6 +45,28 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
       _page = page;
     });
   }
+
+  final List<Widget> homeScreenItems = List.generate(
+    5,
+    (index) {
+      switch (index) {
+        case 0:
+          return const FeedScreen();
+        case 1:
+          return const SearchScreen();
+        case 2:
+          return const AddPostScreen();
+        case 3:
+          return const Text('notifications');
+        case 4:
+          return ProfileScreen(
+            uid: FirebaseAuth.instance.currentUser!.uid,
+          );
+        default:
+          throw Exception('Invalid index: $index');
+      }
+    },
+  );
 
   @override
   Widget build(BuildContext context) {
