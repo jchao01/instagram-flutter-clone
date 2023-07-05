@@ -59,6 +59,9 @@ class AuthMethods {
             .doc(cred.user!.uid)
             .set(user.toJson());
 
+        await _auth.signInWithEmailAndPassword(
+            email: email, password: password);
+
         res = "success";
       } else {
         res = "Please enter all the fields";
