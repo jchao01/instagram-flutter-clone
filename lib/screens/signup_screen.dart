@@ -2,6 +2,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:instagram_clone_flutter/providers/user_provider.dart';
 import 'package:instagram_clone_flutter/resources/auth_methods.dart';
 import 'package:instagram_clone_flutter/responsive/mobile_screen_layout.dart';
 import 'package:instagram_clone_flutter/responsive/responsive_layout.dart';
@@ -24,7 +25,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _bioController = TextEditingController();
   bool _isLoading = false;
-  Uint8List? _image;
+  Uint8List _image = Uint8List.fromList([]);
 
   @override
   void dispose() {
@@ -46,7 +47,7 @@ class _SignupScreenState extends State<SignupScreen> {
         password: _passwordController.text,
         username: _usernameController.text,
         bio: _bioController.text,
-        file: _image!);
+        file: _image);
     // if string returned is sucess, user has been created
     if (res == "success") {
       setState(() {
@@ -107,10 +108,10 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
               Stack(
                 children: [
-                  _image != null
+                  _image.isNotEmpty
                       ? CircleAvatar(
                           radius: 64,
-                          backgroundImage: MemoryImage(_image!),
+                          backgroundImage: MemoryImage(_image),
                           backgroundColor: Colors.red,
                         )
                       : const CircleAvatar(
