@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_flutter/utils/colors.dart';
-import 'package:instagram_clone_flutter/utils/global_variable.dart';
+import 'package:alcurno_transcribe/utils/colors.dart';
 
 import '../screens/add_post_screen.dart';
 import '../screens/feed_screen.dart';

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:instagram_clone_flutter/resources/auth_methods.dart';
-import 'package:instagram_clone_flutter/responsive/mobile_screen_layout.dart';
-import 'package:instagram_clone_flutter/responsive/responsive_layout.dart';
-import 'package:instagram_clone_flutter/responsive/web_screen_layout.dart';
-import 'package:instagram_clone_flutter/screens/signup_screen.dart';
-import 'package:instagram_clone_flutter/utils/colors.dart';
-import 'package:instagram_clone_flutter/utils/global_variable.dart';
-import 'package:instagram_clone_flutter/utils/utils.dart';
-import 'package:instagram_clone_flutter/widgets/text_field_input.dart';
+import 'package:alcurno_transcribe/resources/auth_methods.dart';
+import 'package:alcurno_transcribe/responsive/mobile_screen_layout.dart';
+import 'package:alcurno_transcribe/responsive/responsive_layout.dart';
+import 'package:alcurno_transcribe/responsive/web_screen_layout.dart';
+import 'package:alcurno_transcribe/screens/signup_screen.dart';
+import 'package:alcurno_transcribe/utils/colors.dart';
+import 'package:alcurno_transcribe/utils/global_variable.dart';
+import 'package:alcurno_transcribe/utils/utils.dart';
+import 'package:alcurno_transcribe/widgets/text_field_input.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
